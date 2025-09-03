@@ -1,0 +1,2 @@
+BAS,Basica,30.0,30
+PREM,Premium,50.0,90

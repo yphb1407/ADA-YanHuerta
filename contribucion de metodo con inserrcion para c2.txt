@@ -1,0 +1,31 @@
+// Método para ordenar con Inserción (true = ascendente, false = descendente)
+
+
+private void ordenarInsercion(double[] arreglo, boolean ascendente) {
+    int n = arreglo.length;
+    for (int i = 1; i < n; i++) {
+        double key = arreglo[i];
+        int j = i - 1;
+
+        while (j >= 0 && ((ascendente && arreglo[j] > key) ||
+                         (!ascendente && arreglo[j] < key))) {
+            arreglo[j + 1] = arreglo[j];
+            j--;
+        }
+        arreglo[j + 1] = key;
+    }
+}
+
+
+
+y una cambio mas seria poner el mostrar calificaciones esto
+para que tenga sentido el metodo de inserccion
+
+
+ 
+if (comboOrden.getSelectedItem().equals("Ascendente")) {
+    ordenarInsercion(copia, true);
+} else {
+    ordenarInsercion(copia, false);
+}
+

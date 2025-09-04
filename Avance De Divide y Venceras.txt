@@ -1,0 +1,71 @@
+package MS;
+import java.util.Arrays;
+public class MergeSort {
+    public static void main(String[] args) {
+        int[] myArr = {1,4,2,3,6,9,7,10,8};
+        mergeSort(myArr, 0, 8);
+        System.out.println(Arrays.toString(myArr));
+    }
+    public static void mergeSort(int[] arr, int lower, int upper) {
+        if (lower < upper) {
+            int mid = (lower + upper) / 2;
+            mergeSort(arr, lower, mid);
+            mergeSort(arr, mid + 1, upper);
+            merge(arr, lower, mid, upper);
+        } 
+    } 
+    private static void merge(int[] arr, int lower, int mid, int upper) {
+        int leftSize = mid - lower + 1;
+        int rightSize = upper - mid;
+        int[] leftArray = new int[leftSize];
+        int[] rightArray = new int[rightSize];
+        for (int i = 0; i < leftSize; i++) {
+            leftArray[i] = arr[lower + i]; 
+        }
+        for (int j = 0; j < rightSize; j++) {
+            rightArray[j] = arr[mid + 1 + j];
+        }
+        int i = 0, j = 0, k = lower;
+        while (i < leftSize && j < rightSize) {
+            if (leftArray[i] <= rightArray[j]) {
+                arr[k] = leftArray[i];
+                i++;
+            } else {
+                arr[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < leftSize) { 
+            arr[k] = leftArray[i];
+            i++;
+            k++; 
+        }
+        while (j < rightSize) {            
+            arr[k] = rightArray[j];
+            j++;
+            k++;
+        }
+    }
+}
+
+/*
+Programa: MergeSort.java
+Paquete: MS
+
+Descripción:
+Este programa implementa el algoritmo de ordenamiento Merge Sort en Java. 
+El algoritmo sigue la estrategia "divide y vencerás": 
+1. Divide el arreglo en mitades recursivamente hasta que cada subarreglo tenga un solo elemento.
+2. Combina (merge) los subarreglos de forma ordenada para reconstruir el arreglo completo.
+
+Detalles importantes:
+- El método mergeSort() divide el arreglo en mitades usando índices `lower`, `mid` y `upper`.
+- El método merge() se encarga de combinar dos subarreglos temporales (izquierda y derecha) en orden ascendente.
+- Se usan arreglos auxiliares `leftArray` y `rightArray` para almacenar temporalmente los valores de cada mitad.
+- Finalmente, el arreglo original queda ordenado de menor a mayor.
+
+Ejemplo:
+Dado el arreglo inicial {1,4,2,3,6,9,7,10,8}, 
+el resultado impreso en consola será: [1, 2, 3, 4, 6, 7, 8, 9, 10]
+

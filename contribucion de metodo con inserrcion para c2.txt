@@ -1,4 +1,4 @@
-// Método para ordenar con Inserción (true = ascendente, false = descendente)
+// Método para ordenar con Inserción (true = ascendente, false = descendente).
 
 
 private void ordenarInsercion(double[] arreglo, boolean ascendente) {
@@ -28,4 +28,5 @@ if (comboOrden.getSelectedItem().equals("Ascendente")) {
 } else {
     ordenarInsercion(copia, false);
 }
+
 

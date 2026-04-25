@@ -1,0 +1,64 @@
+pwd
+clear
+cd
+mkdir
+rmdir
+ls  -FalRtrsh
+
+
+cat > xd.txt crear
+cat xd.txt ver 
+cat >> xd.txt editar
+cat xd.txt > xde.txt copiar
+cat xd.txt xde.txt concatenar
+cat xd.txt xde.txt > bro.txt concatenar y guardar
+cat -A =$
+cat -b = numeros
+mv mueve archivos-directorios, cambia nombres de archivos o directorios
+rm -i  -r
+
+
+vim (3modos)
+esq, shift+: , i 
+
+:w xde.txt
+:edit xde.txt
+:r xde.txt
+:/text buscar
+:%s/nombre1/nombre2/gc remplazar
+:set nu y :set nonu
+
+(numero)yy copia
+p pega
+o añade linea abajo
+x elimina un caracter
+dd elimina toda la linea
+dw elimina la palabra a la derecha
+dnumerod elimina lineas debajo del cursor
+>> << mueve la linea a izquierda y derecha
+
+ps -l
+ps -aux
+ps -e 
+ps -U root -u root u  
+pgrep PID de un proceso
+vim & segundo plano
+pstree
+
+
+top nos da informacion en forma dinamica
+k o r mata o rienica un proceso con el PID
+d,s cambia el tiempo de actualizacion de un proceso
+q salir de top
+
+ps -e > procesos1.txt
+top -b -n1 > infotop.txt
+
+nice -n 10 vim & abre un poceso con una prioridad especifica
+ps -l para ver el vim con NI 10
+renice 12 -p PID    cambia prioridad
+
+kill -9 PID del proceso 
+
+
+
